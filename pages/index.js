@@ -30,7 +30,7 @@ const Homepage = (props) => {
 // }
 
 export const getStaticProps = async () => {
-  const client = await MongoClient.connect("mongodb://localhost/meetups");
+  const client = await MongoClient.connect("mongodb+srv://jtqn:HJcddhRUedfucS4w@cluster0.nlmr3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
   const db = client.db();
   const meetupsCollection = db.collection("meetups");
   const meetups = await meetupsCollection.find().toArray();
